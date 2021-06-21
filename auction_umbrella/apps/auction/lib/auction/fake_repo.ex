@@ -1,10 +1,3 @@
-defmodule Auction.Item do
-  defstruct id: 0,
-            title: "default title",
-            description: "default description",
-            ends_at: ~N[2020-12-31 23:59:59]
-end
-
 defmodule Auction.FakeRepo do
   alias Auction.Item
 
@@ -41,23 +34,5 @@ defmodule Auction.FakeRepo do
         Map.get(item, key) === attrs[key]
       end)
     end)
-  end
-end
-
-defmodule Auction do
-  alias Auction.{FakeRepo, Item}
-
-  @repo FakeRepo
-
-  def list_items do
-    @repo.all(Item)
-  end
-
-  def get_item(id) do
-    @repo.get!(Item, id)
-  end
-
-  def get_item_by(attrs) do
-    @repo.get_by(Item, attrs)
   end
 end
