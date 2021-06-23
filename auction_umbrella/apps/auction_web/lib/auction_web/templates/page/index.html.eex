@@ -9,6 +9,6 @@
       <li>
         <%= item.title %>, <%= item.description %>
       </li>
-    <%= end %>
+    <% end %>
   </ul>
 </section>
