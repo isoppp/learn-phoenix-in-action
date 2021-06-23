@@ -9,6 +9,15 @@
 # move said applications out of the umbrella.
 import Config
 
+config :auction, ecto_repos: [Auction.Repo]
+
+config :auction, Auction.Repo,
+  database: "learn-phoenix-in-action",
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost",
+  port: 5433
+
 config :auction_web,
   generators: [context_app: false]
 
